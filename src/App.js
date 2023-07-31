@@ -27,7 +27,8 @@ const App = () => {
       <hr />
       <OrderList orders={orders} table="1" />
       <OrderList orders={orders} table="2" />
-      {/* Add more tables as needed */}
+      <OrderList orders={orders} table="3" />
+      <OrderList orders={orders} table="4" />
     </div>
   );
 };

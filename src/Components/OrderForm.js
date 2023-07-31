@@ -4,7 +4,7 @@ const OrderForm = ({ addOrder }) => {
   const [orderId, setOrderId] = useState("");
   const [price, setPrice] = useState("");
   const [dish, setDish] = useState("");
-  const [table, setTable] = useState("");
+  const [table, setTable] = useState("1"); // Default table value is 1
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -12,7 +12,7 @@ const OrderForm = ({ addOrder }) => {
     setOrderId("");
     setPrice("");
     setDish("");
-    setTable("");
+    setTable("1"); // Reset table back to 1 after submitting
   };
 
   return (
@@ -31,7 +31,13 @@ const OrderForm = ({ addOrder }) => {
       </label>
       <label>
         Table:
-        <input type="text" value={table} onChange={(e) => setTable(e.target.value)} />
+        <select value={table} onChange={(e) => setTable(e.target.value)}>
+          <option value="1">Table 1</option>
+          <option value="2">Table 2</option>
+          <option value="3">Table 3</option>
+          <option value="4">Table 4</option>
+
+        </select>
       </label>
       <button type="submit">Add to Bill</button>
     </form>
